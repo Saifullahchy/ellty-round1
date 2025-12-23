@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import checkedIcon from '../assets/Variant5.png';
 import hoverIcon from '../assets/Variant2.png';
+import checkHoverIcon from '../assets/Variant4.png';
 
 const CheckInput = ({ label, onChange, checked }) => {
   const [hover, setHover] = useState(false);
@@ -29,17 +30,17 @@ const CheckInput = ({ label, onChange, checked }) => {
         {/* Outer box (hover/selected halo lives here) */}
         <span
           className={
-            'flex items-center justify-center w-[35px] h-[35px] rounded-[6px] transition-all'
+            'flex items-center justify-center w-[35px] h-[35px] transition-all'
           }
         >
           {/* Inner checkbox */}
           <span
             className={[
-              'flex items-center justify-center w-[23px] h-[23px] rounded-[8px]  bg-white transition-all',
-              !checked || !hover ? 'border border-[#CDCDCD] ' : '',
+              'flex items-center justify-center w-[23px] h-[23px] rounded-[6px]  bg-white ',
+              !checked && !hover ? 'border border-[#CDCDCD] ' : '',
             ].join(' ')}
           >
-            {checked && (
+            {checked && !hover && (
               <img
                 src={checkedIcon}
                 alt="icon"
@@ -50,6 +51,15 @@ const CheckInput = ({ label, onChange, checked }) => {
             {hover && !checked && (
               <img
                 src={hoverIcon}
+                alt="icon"
+                className="select-none pointer-events-none"
+                draggable={false}
+              />
+            )}
+
+            {hover && checked && (
+              <img
+                src={checkHoverIcon}
                 alt="icon"
                 className="select-none pointer-events-none"
                 draggable={false}
