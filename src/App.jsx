@@ -45,7 +45,7 @@ function App() {
           {' '}
           <div className="bg-[#CDCDCD] w-[340px] h-[0.7px]" />
         </div>
-        <div className="overflow-y-auto h-[164px] overflow-hidden no-scrollbar">
+        <div className="overflow-y-auto h-[164px] no-scrollbar">
           {pages.map((page) => {
             return (
               <CheckInput
@@ -62,7 +62,7 @@ function App() {
           <div className="bg-[#CDCDCD] w-[340px] h-[0.7px]" />
         </div>
         <div className="flex justify-center items-center w-full">
-          <Button />
+          <Button label={'Done'} />
         </div>
       </Modal>
     </div>
