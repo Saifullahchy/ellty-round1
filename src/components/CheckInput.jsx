@@ -8,7 +8,7 @@ const CheckInput = ({ label, onChange, checked }) => {
 
   return (
     <label
-      className="group flex items-center justify-between w-full py-2 pr-[15px] pl-[22px] cursor-pointer transition-all"
+      className="group flex items-center justify-between w-full py-1 pr-[15px] pl-[22px] cursor-pointer transition-all"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
